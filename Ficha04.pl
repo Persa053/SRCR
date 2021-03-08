@@ -75,4 +75,3 @@ mmc(X,Y,R) :- Y > X, N is Y * X, mdc(X, Y, Z), R is N / Z.
 fib(0,0).
 fib(1,1).
 fib(X,R) :- N1 is X-1, N2 is X-2, fib(N1,R1), fib(N2,R2), R is R1 + R2.
-fib(X):- X < 0, !, fail.
