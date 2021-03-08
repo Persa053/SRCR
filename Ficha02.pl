@@ -109,6 +109,17 @@ insered(X,[H|T],[H|L]):- X < H, insered(X,T,L).
 decresc([X],[X]).
 decresc([H|T],F):- decresc(T,N), insered(H,N,F).
 
+%--------------------------------- - - - - - - - - - -  -  -  -  -   -
+%Extensao de um predicado que calcule a quantidade de conjuntos vazios existentes num dado conjunto de ocorrências: [H|T],X -> {V,F}
+
+contaVaz([_],0).
+contaVaz([H|T], X):- len(H,0), contaVaz(T,N), X is N+1.
+contaVaz([_|T], X):- contaVaz(T,X).
+
+%--------------------------------- - - - - - - - - - -  -  -  -  -   -
+% Extensao do predicado que e calcule o valor de verdade contrário à resposta a uma questão: X,Bool -> {V,F}
+
+contrario(X) :- \+X.
 
 
 
