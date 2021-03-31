@@ -44,7 +44,7 @@ teste( [R|LR] ) :- R, teste( LR ).
 solucoes(X, Y, Z) :- findall(X, Y, Z).
 
 comprimento([], 0).
-comprimento([_|T], N) :- comprimento(T, R), R is N+1.
+comprimento([_|T], R) :- comprimento(T, N), R is N+1.
 
 %--------------------------------- - - - - - - - - - -  -  -  -  -   -
 % Invariante Estrutural:  nao permitir a insercao de conhecimento repetido
